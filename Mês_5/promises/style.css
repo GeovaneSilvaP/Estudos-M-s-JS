@@ -1,0 +1,275 @@
+/* Definições gerais e Dark Mode */
+:root {
+  --color-bg: #1e1e1e; /* Fundo escuro */
+  --color-surface: #2d2d30; /* Fundo das seções */
+  --color-text: #f0f0f0; /* Texto claro */
+  --color-primary: #00bcd4; /* Ciano (destaque) */
+  --color-success: #8bc34a; /* Verde (sucesso) */
+  --color-warning: #ff9800; /* Laranja (aviso) */
+  --color-button: #00bcd4; /* Cor do botão */
+  --color-button-hover: #0097a7;
+  --color-border: #444444;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 30px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Estilo para a estrutura de cada seção */
+section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-primary); /* Destaque lateral */
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para os títulos das seções */
+h1 {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 12px;
+  margin-top: 0;
+  font-size: 1.8em;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Estilo para os botões */
+button {
+  background-color: var(--color-button);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s;
+  margin-top: 15px;
+  margin-right: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: var(--color-button-hover);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Estilo para o Input (Adicionado na Seção 4) */
+#inputId {
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  background-color: #383838;
+  color: var(--color-text);
+  font-size: 1em;
+  width: 200px;
+  margin-top: 15px;
+  box-sizing: border-box;
+}
+
+/* Estilo para o texto de "Carregando..." (elemento #loading) */
+#loading {
+  margin-top: 15px;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: var(--color-warning);
+  animation: pulse 1.5s infinite;
+}
+
+/* Estilo para o texto de status (geral) */
+p[id^="status"] {
+  margin-top: 15px;
+  font-style: italic;
+  color: #aaaaaa;
+}
+
+/* Estilo para a div de resultado de dados */
+div[id^="resultado"] {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px dashed var(--color-border);
+  background-color: #383838;
+  min-height: 50px;
+  white-space: pre-wrap;
+  font-family: "Consolas", monospace;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+/* Animação para o texto de carregamento */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* CLASSE PARA ESCONDER ELEMENTOS (essencial para o JS) */
+.hidden {
+  display: none !important;
+}
+
+/* ------------------------------------- */
+/* ESTILOS DO SPINNER (LOADER) */
+/* ------------------------------------- */
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(45deg); /* Gira o contêiner para o efeito visual */
+  margin: 15px 0;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  border-top-color: var(--color-primary); /* Cor primária */
+  border-bottom-color: var(--color-primary);
+  animation: rotate-loader 1.5s linear infinite;
+}
+.loader::after {
+  inset: 8px;
+  border-color: transparent;
+  border-right-color: var(--color-warning); /* Cor de aviso */
+  border-left-color: var(--color-warning);
+  animation: rotate-loader 1.5s linear infinite reverse;
+}
+
+@keyframes rotate-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cards de usuário */
+.user-card {
+  border: 1px solid #e3e6eb;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.user-card h2 {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.status {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #18b125;
+  min-height: 22px;
+}
+
+.resultado {
+  margin-top: 10px;
+  min-height: 40px;
+  font-size: 0.95rem;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Mensagem final */
+#mensagem6 {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Overlay global */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.1rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 999;
+}
+
+/* Mostrar overlay */
+#overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Spinner */
+.spinner {
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid #ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.progress-container {
+  width: 100%;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #1a73e8;
+  transition: width 0.2s;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Promise</title>
+  </head>
+  <body>
+    <section>
+      <h1>🟢 1. Texto de “Carregando...”</h1>
+
+      <button id="btn">Botão</button>
+      <p id="loading"></p>
+    </section>
+
+    <section>
+      <h1>🟢 2. Carregar dados falsos</h1>
+
+      <button id="btn2">Botão</button>
+      <p id="status"></p>
+      <div id="resultado2"></div>
+    </section>
+
+    <section>
+      <h1>🟡 3. Loading com fetch</h1>
+
+      <button id="btn3">Buscar dados</button>
+      <p id="status3"></p>
+      <div id="resultado3"></div>
+    </section>
+
+    <section>
+      <h1>🟡 4. Loading com Spinner</h1>
+
+      <span class="loader" id="loader"></span>
+      <input id="inputId" placeholder="Digite um numero..." />
+      <button id="btn4">Buscar dados</button>
+      <p id="status4"></p>
+      <div id="resultado4"></div>
+    </section>
+
+    <section>
+      <h1>🧩 5. Loading múltiplo (vários botões)</h1>
+
+      <div class="user-card">
+        <h2>Usuário 1</h2>
+        <button class="load-btn">Carregar perfil</button>
+        <div class="status"></div>
+        <div class="resultado"></div>
+      </div>
+
+      <div class="user-card">
+        <h2>Usuário 2</h2>
+        <button class="load-btn">Carregar perfil</button>
+        <div class="status"></div>
+        <div class="resultado"></div>
+      </div>
+
+      <div class="user-card">
+        <h2>Usuário 3</h2>
+        <button class="load-btn">Carregar perfil</button>
+        <div class="status"></div>
+        <div class="resultado"></div>
+      </div>
+    </section>
+
+    <section>
+      <h1>🧩 6. Loading Global com Overlay</h1>
+
+      <form id="form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome6" placeholder="Digite seu nome" required />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email6"
+          placeholder="Digite seu email"
+          required
+        />
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <p id="mensagem6"></p>
+
+      <div id="overlay">
+        <div class="spinner"></div>
+        <p>Processando...</p>
+      </div>
+    </section>
+
+    <section>
+      <h1>🧩 11. Barra de Progresso Animada</h1>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress"></div>
+      </div>
+      
+      <button id="btn11">Iniciar</button>
+    </section>
+  </body>
+</html>
