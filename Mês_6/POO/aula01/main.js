@@ -2,7 +2,7 @@
 
 // import { capitalizado, ordenacao, caixaAlta } from "./funcoes.js";
 
-// const ingredientes = ["mel", "água", "sal", "mostarda"];
+ //const ingredientes = ["mel", "água", "sal", "mostarda"];
 
 // const resultadoCapitalizado = capitalizado(ingredientes);
 // const resultadoOrdenado = ordenacao(resultadoCapitalizado);
@@ -14,4 +14,8 @@
 
 import { ingredientes } from "./ingredientes.js";
 
+import { capitalizarNovo } from "./funcoes.js";
 
+const resultadoCapitalizarNovo = capitalizarNovo(ingredientes, "nome");
+
+console.log(resultadoCapitalizarNovo);
