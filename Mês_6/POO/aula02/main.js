@@ -53,7 +53,6 @@ class Usuario {
   profissao2() {
     console.log("Programador");
   }
-
 }
 
 const pessoa1 = new Usuario("Geovane", 23, "Cajari");
@@ -70,17 +69,48 @@ console.log(pessoa5);
 
 //
 
-function Car() {
-    this.modelo = "HRV";
-    this.ano = "2025";
-    this.marca = "Fiat";
+class Car {
+  constructor(modelo, ano, marca) {
+    this.modelo = modelo;
+    this.ano = ano;
+    this.marca = marca;
+  }
 
-    this.turnOn = () =>{
-        console.log("Vrummmmmmm");
-    }
+  buzina = () => {
+    console.log("Biiiimmmmmm");
+  };
 }
 
-const newCar = new Car();
+const newCar = new Car("HB20", 2023, "Hindai");
 
 console.log(newCar);
-newCar.turnOn()
+newCar.buzina();
+
+//
+import { Pessoa } from "./minhaClasse.js";
+
+const user = new Pessoa("Geovane", 23, "Cajari");
+
+console.log(user);
+
+user.profissao("Programador");
+
+//
+import { Frutas } from "./minhaClasse.js";
+
+const debs = new Frutas("Geovane", 23, "Cajari", "Manga");
+
+console.log(debs);
+
+console.log(debs.profissao("Programador"));
+
+//
+import { Square } from "./minhaClasse.js";
+
+const square = new Square(3)
+
+console.log(square.area);
+
+square.area = 16;
+
+console.log(square.size);
